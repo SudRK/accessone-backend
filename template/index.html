@@ -1,0 +1,17 @@
+<script>
+
+    let socket = new WebSocket('ws://127.0.0.1:8000/ws/api/accessone/');
+
+    socket.onopen = function (e) {
+      console.log('Connection established');
+    };
+  
+    socket.onmessage = function (e) {
+      var data = JSON.parse(e.data)
+      console.log(data)     
+    };
+    socket.onclose = function (e) {
+      console.log('Connection closed');
+    };
+  
+  </script>
